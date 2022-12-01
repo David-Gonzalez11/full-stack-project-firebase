@@ -47,7 +47,7 @@ export default function Dashboard() {
 
   return (
     <div>
-      <h1>Your posts</h1>
+      <h1 className="text-2xl pl-2">Your posts</h1>
       <div>
         {posts.map((post) => {
           return (
