@@ -3,7 +3,6 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { auth, db } from "../utils/firebase";
 import { toast } from "react-toastify";
-import Image from "next/image";
 import {
   arrayUnion,
   doc,
@@ -58,7 +57,6 @@ export default function Details() {
   useEffect(() => {
     if (!router.isReady) return;
     getComments();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [router.isReady]);
   return (
     <div>
@@ -84,7 +82,7 @@ export default function Details() {
           {allMessage?.map((message) => (
             <div className="bg-white p-4 my-4 border-2" key={message.time}>
               <div className="flex items-center gap-2 mb-4">
-                <Image
+                <img
                   className="w-10 rounded-full"
                   src={message.avatar}
                   alt=""
